@@ -14,7 +14,7 @@ class EmployManagementSystem
     System.out.println("\t\t\t  EMPLOYEE MANAGEMENT SYSTEM");
     System.out.println("\t\t*******************************************");
     System.out.println("\t\t\t    --------------------");
-    System.out.println("\t\t\t     ~$ Abhinav Dubey");
+    System.out.println("\t\t\t     ~$ Yashwanth Bhukya ");
     System.out.println("\t\t\t    --------------------");
     System.out.println("\n\nPress 1 : To Add an Employee Details");
     System.out.println("Press 2 : To See an Employee Details ");
