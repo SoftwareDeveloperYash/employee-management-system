@@ -6,7 +6,7 @@ import java.io.*;
 
 /*************************** MENU OF EMS ****************************/
 
-class EmployManagementSystem
+class MainMenu
 {
   public void menu()
   {
@@ -21,7 +21,6 @@ class EmployManagementSystem
     System.out.println("Press 3 : To Remove an Employee");
     System.out.println("Press 4 : To Update Employee Details");
     System.out.println("Press 5 : To Exit the EMS Portal");
-
   }
 }
 
@@ -112,20 +111,23 @@ class Employee_Remove
 {
     public void removeFile(String ID)
     {
-
-    File file = new File("file"+ID+".txt");
-      if(file.exists())
-       {
-         if(file.delete());
-         {
-           System.out.println("\nEmployee has been removed Successfully");
-         }
-       }
-      else
-       {
+        File file = new File("file"+ID+".txt");
+        if(file.exists())
+        {
+            if(file.delete())
+            {
+                System.out.println("\nEmployee has been removed Successfully");
+            }
+            else
+            {
+                System.out.println("\nSomething went wrong while removing the employee.");
+            }
+        }
+        else
+        {
             System.out.println("\nEmployee does not exists :( ");
-       }
-     }
+        }
+    }
 }
 
 /************************ To Update details of Employee ********************/
@@ -145,7 +147,6 @@ class Employee_Update
    fileContext = fileContext.replaceAll(o,n);
    myWriter.write(fileContext);
    myWriter.close();
-
   }
 }
 
@@ -159,7 +160,7 @@ class CodeExit
     System.out.println("\n*****************************************");
     System.out.println("$ cat Thank You For Using my Software :) ");
     System.out.println("*****************************************");
-    System.out.println("\t\t/~ <0d3d by Abhinav Dubey\n");
+    System.out.println("\t\t\t~ Yashwanth Bhukya\n");
     System.exit(0);
   }
 }
@@ -178,14 +179,13 @@ class EmployManagementSystem
 
     int i=0;
 
-    /*** Callining Mainmenu Class function ****/
+    /*** Calling MainMenu class function ****/
     MainMenu obj1 = new MainMenu();
     obj1.menu();
 
     /*** Initialising loop for Menu Choices ***/
     while(i<6)
     {
-
       System.out.print("\nPlease Enter choice :");
       i=Integer.parseInt(sc.nextLine());
 
@@ -194,7 +194,6 @@ class EmployManagementSystem
       {
         case 1:
         {
-        /** Creating class's object and calling Function using that object **/
         Employee_Add ep =new Employee_Add();
         ep.createFile();
 
@@ -208,16 +207,16 @@ class EmployManagementSystem
           String s=sc.nextLine();
           try
           {
-            epv.viewFile(s);}
-            catch(Exception e){System.out.println(e);}
-
-
-            System.out.print("\nPress Enter to Continue...");
-            sc.nextLine();
-            System.out.print("\033[H\033[2J");
-            obj1.menu();
-            break;
+            epv.viewFile(s);
           }
+          catch(Exception e){System.out.println(e);}
+
+          System.out.print("\nPress Enter to Continue...");
+          sc.nextLine();
+          System.out.print("\033[H\033[2J");
+          obj1.menu();
+          break;
+        }
 
         case 3:
         {
@@ -265,6 +264,7 @@ class EmployManagementSystem
             {
               System.out.println(e);
             }
+            break;
         }
         case 5:
         {
@@ -276,4 +276,4 @@ class EmployManagementSystem
   }
 }
 
-/****************************** CODED BY ABHINAV DUBEY ************************/
+/****************************** CODED BY YASHWANTH BHUKYA ************************/
